@@ -205,7 +205,7 @@
   show-footer: true,
   language: "en",
   font: ("Source Sans Pro", "Source Sans 3"),
-  header-font: "Roboto",
+  header-font: ("Source Sans Pro", "Source Sans 3"),
   paper-size: "a4",
   use-smallcaps: true,
   show-address-icon: false,
@@ -277,7 +277,7 @@
       color-darkgray
     }
     #text[#strong[#text(color)[#it.body]]]
-    #box(width: 1fr, line(length: 100%))
+    #box(width: 1fr, line(length: 100%, stroke: 1pt + color-darkgray.transparentize(80%)))
   ]
 
   show heading.where(level: 2): it => {
@@ -294,14 +294,14 @@
     align(center)[
       #pad(bottom: 5pt)[
         #block[
-          #set text(size: 32pt, style: "normal", font: header-font)
+          #set text(size: 26pt, style: "normal", font: header-font)
           #if language == "zh" or language == "ja" [
             #text(accent-color, weight: "bold")[#author.lastname]#text(
               weight: "thin",
             )[#author.firstname]
           ] else [
-            #text(accent-color, weight: "thin")[#author.firstname]
-            #text(weight: "bold")[#author.lastname]
+            #text(weight: "black")[#author.firstname]
+            #text(weight: "black")[#author.lastname]
           ]
         ]
       ]
@@ -385,8 +385,8 @@
         #linkedin-icon
         #box[
           #link(
-            "https://www.linkedin.com/in/" + author.linkedin,
-          )[#author.firstname #author.lastname]
+            "https://www.linkedin.com/" + author.linkedin,
+          )[#author.linkedin]
         ]
       ])
     }
@@ -635,7 +635,7 @@
   accent-color: default-accent-color,
   language: "en",
   font: ("Source Sans Pro", "Source Sans 3"),
-  header-font: "Roboto",
+  header-font: ("Source Sans Pro", "Source Sans 3"),
   show-footer: true,
   closing: none,
   paper-size: "a4",
@@ -721,14 +721,14 @@
     align(right)[
       #pad(bottom: 5pt)[
         #block[
-          #set text(size: 32pt, style: "normal", font: header-font)
+          #set text(size: 26pt, style: "normal", font: header-font)
           #if language == "zh" or language == "ja" [
             #text(accent-color, weight: "bold")[#author.lastname]#text(
               weight: "bold",
             )[#author.firstname]
           ] else [
-            #text(accent-color, weight: "thin")[#author.firstname]
-            #text(weight: "bold")[#author.lastname]
+            #text(weight: "black")[#author.firstname]
+            #text(weight: "black")[#author.lastname]
           ]
 
         ]
@@ -789,8 +789,8 @@
         #linkedin-icon
         #box[
           #link(
-            "https://www.linkedin.com/in/" + author.linkedin,
-          )[#author.firstname #author.lastname]
+            "https://www.linkedin.com/" + author.linkedin,
+          )[#author.linkedin]
         ]
       ]
     }
